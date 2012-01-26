@@ -24,9 +24,11 @@ Other customizable features:
    ``def mousefunc(self, button, state, x, y)``)
  * Extend or override keyboard callback (overriding
    ``def keyboardfunc(self, *args)``)
- 
 
-Example
+
+
+
+Very simple example
 ================================================================================
 
 from only.gl import colors
@@ -115,4 +117,27 @@ def main():
 
 print "Hit ESC key to quit."
 main()
+
+
+
+
+Models and collisions
+================================================================================
+
+To facilitate model development, OnlyGL provides a Model class. This class is
+allocated in only.gl.models package. This Model class offers minimal information
+about the model. A Model stores its (x,y,z) coordinates, its color and its name
+(OpenGL name, for pick functions). Furthermore, a Model offers a selection
+mechanism for remark the object in the scene.
+
+Model class is an abstract class and it must not use directly. You can use
+``model`` method to define what object is rendered.
+
+A BoxModel is provided too. This is a subclass of Model, the simplest object
+that it can be rendered.
+
+OnlyGL provides a very simple collision detection system. Each model defines a
+``collision`` method who indicates if a collision exists. Furthermore, this
+method receives a ``xzy`` optional parameter. If xyz is True, it references a 3D
+collision. In other case, only 2D collision is considered.
 
