@@ -1,33 +1,6 @@
-Description
-================================================================================
-
-OnlyGL is a mini-framework to quick develop OpenGL scenes in Python. It requires
-pyopengl.
-
-The main class of OnlyGL is Scene in only.gl.scene package. You can create your
-own scene creating a class that inherits from Scene. You must define the
-following methods:
- * ``init_model`` - Initialize your model
- * ``draw`` - Draw your model
-
-Feautres:
- * Pick objects from scene
- * Get world coordinates from window clicks
- * Disable/Enable lighting
- * Use of camera to get perspective
-
-Other customizable features:
- * Modify the perspective (overriding ``def perspective(self)`` method)
- * Adding mouse motion (overriding
-   ``def motionfunc(self, button, state, x, y)``)
- * Extend or override mouse callback (overriding
-   ``def mousefunc(self, button, state, x, y)``)
- * Extend or override keyboard callback (overriding
-   ``def keyboardfunc(self, *args)``)
- 
-
-Example
-================================================================================
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
 
 from only.gl import colors
 from only.gl.scene import Scene
@@ -113,6 +86,6 @@ def main():
 
     glutMainLoop()
 
+
 print "Hit ESC key to quit."
 main()
-
